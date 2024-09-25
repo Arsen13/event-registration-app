@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+.text {
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.input-field, .button {
+    height: 2rem;
+    width: 25rem;
+    border: none;
+    border-radius: 10px;
+}
+
+.button {
+    background: #A68568;
+    cursor: pointer;
+}
+
+.radio-input {
+    width: 22rem;
+    display: flex;
+    justify-content: space-around;
+}

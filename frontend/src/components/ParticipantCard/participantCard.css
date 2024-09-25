@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+}
+
+.participant-card {
+    width: 20rem;
+    height: 7rem;
+    padding: .7rem;
+    background: #735943;
+    border: 2px solid #BFA38A;
+    transition-duration: .5s;
+}
+
+.participant-card:hover {
+    background: #BFA38A;
+    color: #222621;
+    border: 2px solid #735943;
+}

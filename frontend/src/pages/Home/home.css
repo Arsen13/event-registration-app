@@ -1,0 +1,16 @@
+body {
+    background: #222621;
+}
+
+.header {
+    text-align: center;
+}
+
+.card-list {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+}

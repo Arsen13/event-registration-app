@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #d1c1b4;
+}
+
+.card {
+    width: 20rem;
+    height: 10rem;
+    border: 2px solid #BFA38A;
+    background: #735943;
+    transition-duration: .5s;
+}
+
+.card:hover {
+    background: #BFA38A;
+    color: #222621;
+    border: 2px solid #735943;
+}
+
+.desc-container {
+    padding-left: 25px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.link {
+    background: #222621;
+    padding: .5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #BFA38A;
+    transition-duration: .5s;
+}
+
+.link:hover {
+    background-color: #735943;
+}
