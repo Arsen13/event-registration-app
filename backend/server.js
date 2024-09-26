@@ -16,10 +16,6 @@ app.use(cookieParser());
 
 app.use("/event", eventRoutes);
 
-app.get("/", (req, res) => {
-    res.send("HEllo")
-});
-
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
     connectMongoDB();
