@@ -4,8 +4,8 @@
 
 .participant-card {
     width: 20rem;
-    height: 7rem;
-    padding: .7rem;
+    height: 11rem;
+    padding-left: .7rem;
     background: #735943;
     border: 2px solid #BFA38A;
     transition-duration: .5s;
@@ -15,4 +15,12 @@
     background: #BFA38A;
     color: #222621;
     border: 2px solid #735943;
+}
+
+.date {
+    font-size: 1rem;
+}
+
+.email {
+    font-style: italic;
 }

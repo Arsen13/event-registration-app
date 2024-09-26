@@ -1,10 +1,12 @@
 import "./ParticipantCard.css";
 
-const ParticipantCard = ({ fullName, email }) => {
+const ParticipantCard = ({ fullName, email, dateOfBirth, eventSource }) => {
     return (
         <div className="participant-card">
-            <p>{fullName}</p>
-            <p>{email}</p>
+            <h3>{fullName}</h3>
+            <h4 className="email">{email}</h4>
+            <p className="date">{dateOfBirth.split("T")[0]}</p>
+            <p>Event source: {eventSource}</p>
         </div>
     )
 }

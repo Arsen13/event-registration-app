@@ -7,8 +7,8 @@ body {
 }
 
 .card {
-    width: 20rem;
-    height: 10rem;
+    width: 30rem;
+    height: 16rem;
     border: 2px solid #BFA38A;
     background: #735943;
     transition-duration: .5s;
@@ -41,4 +41,10 @@ body {
 
 .link:hover {
     background-color: #735943;
+}
+
+.date {
+    font-size: 1.1rem;
+    font-style: italic;
+    letter-spacing: .2rem;
 }

@@ -9,6 +9,15 @@ const eventSchema = new mongoose.Schema({
         type: String,
         require: true
     },
+    eventDate: {
+        type: Date,
+        require: true,
+        default: Date.now()
+    },
+    organizer: {
+        type: String,
+        require: true
+    },
     participants: [
         {
             fullName: {

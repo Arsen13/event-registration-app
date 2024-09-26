@@ -2,7 +2,7 @@ const Event = require("../models/event.model");
 
 const createEvent = async (req, res) => {
     try {
-        const { title, description } = req.body;
+        const { title, description, eventDate, organizer } = req.body;
 
         if (!title) {
             return res.status(404).json({ error: "Title is require" });
@@ -12,9 +12,19 @@ const createEvent = async (req, res) => {
             return res.status(404).json({ error: "Description is require" });
         }
 
+        if (!eventDate) {
+            return res.status(404).json({ error: "Event date is required" });
+        }
+
+        if (!organizer) {
+            return res.status(404).json({ error: "Organizer is require" });
+        }
+
         const event = new Event({
             title,
-            description
+            description,
+            eventDate,
+            organizer
         });
 
         await event.save();

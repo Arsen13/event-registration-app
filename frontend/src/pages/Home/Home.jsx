@@ -57,6 +57,8 @@ const Home = () => {
                             key={item._id}
                             title={item.title}
                             description={item.description}
+                            organizer={item.organizer}
+                            eventDate={item.eventDate}
                             viewParticipants={() => viewParticipants(item)}
                             register={() => registerParticipant(item._id)}
                         />

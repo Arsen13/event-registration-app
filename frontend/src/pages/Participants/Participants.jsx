@@ -15,6 +15,8 @@ const Participants = () => {
                             key={participant._id}
                             fullName={participant.fullName}
                             email={participant.email}
+                            dateOfBirth={participant.dateOfBirth}
+                            eventSource={participant.eventSource}
                         />
                     ))}
                 </div>
