@@ -1,10 +1,10 @@
 import "./ParticipantCard.css";
 
-const ParticipantCard = () => {
+const ParticipantCard = ({ fullName, email }) => {
     return (
         <div className="participant-card">
-            <p>John Doe</p>
-            <p>john.doe@mail.com</p>
+            <p>{fullName}</p>
+            <p>{email}</p>
         </div>
     )
 }

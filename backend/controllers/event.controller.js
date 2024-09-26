@@ -79,11 +79,32 @@ const addParticipant = async (req, res) => {
         await event.save();
 
         res.status(200).json(event);
-        
+
     } catch (error) { 
         console.log("Error in addParticipant controller", error.message);
         res.status(500).json({ error: "Internal server error" });
     }
 };
 
-module.exports = { createEvent, getAllEvents, addParticipant };
+const getAllParticipants = async (req, res) => {
+    try {
+        const eventId = req.params.id;
+
+        const event = await Event.findById(eventId);
+        if (!event) {
+            return res.status(404).json({ error: "Event not found" });
+        }
+
+        if (event.participants.length === 0) {
+            return res.status(200).json([])
+        }
+
+        res.status(200).json(event.participants);
+
+    } catch (error) {
+        console.log("Error in getAllParticipants controller", error.message);
+        res.status(500).json({ error: "Internal server error" });
+    }
+}
+
+module.exports = { createEvent, getAllEvents, addParticipant, getAllParticipants };
