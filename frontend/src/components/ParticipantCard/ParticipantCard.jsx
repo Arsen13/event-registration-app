@@ -1,4 +1,4 @@
-import "./ParticipantCard.css";
+import "./participantCard.css";
 
 const ParticipantCard = ({ fullName, email, dateOfBirth, eventSource }) => {
     return (
