@@ -14,3 +14,22 @@ body {
     justify-content: center;
     align-items:center;
 }
+
+.sort-option {
+    text-align: center;
+}
+
+.sort-option > p {
+    display: inline-block;
+    margin-right: 1rem; 
+    font-size: 1.2rem;
+}
+
+.sort-option > select {
+    color: #d1c1b4;
+    width: 8rem;
+    height: 2rem;
+    text-align: center;
+    background: #735943;
+    border: 2px solid #BFA38A;
+}

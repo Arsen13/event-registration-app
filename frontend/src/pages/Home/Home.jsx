@@ -9,14 +9,15 @@ const Home = () => {
     const navigate = useNavigate();
 
     const [events, setEvents] = useState([]);
-    const [eventParticipants, setEventParticipants] = useState([]);
+    const [sortType, setSortType] = useState('title');
 
     const getAllEvents = async () => {
         try {
             const response = await axiosInstance("/allEvents");
 
             if (response.data) {
-                setEvents(response.data);
+                const sortedData = response.data.sort((a, b) => a.title.localeCompare(b.title));
+                setEvents(sortedData);
             }
         } catch (error) {
             console.log("An unexpected error occured. Please try again");
@@ -41,15 +42,41 @@ const Home = () => {
     }
 
     useEffect(() => {
+        if (events.length > 0) {
+            const sortEvents = type => {
+                const types = {
+                    title: "title",
+                    eventDate: "eventDate",
+                    organizer: "organizer"
+                };
+                const sortProperty = types[type];
+                const sorted = [...events].sort((a, b) => a[sortProperty].localeCompare(b[sortProperty]));
+                setEvents(sorted);
+            }
+
+            sortEvents(sortType)
+        }
+    }, [sortType])
+
+    useEffect(() => {
         getAllEvents();
-        setEventParticipants([])
         return () => {};
     }, []);
-
 
     return (
         <>
             <h1 className="header">Events</h1>
+
+            
+            <div className="sort-option">
+                <p>Sort by</p>
+                <select onChange={(e) => setSortType(e.target.value)} defaultValue={null}>
+                    <option value="title">Title</option>
+                    <option value="eventDate">Event Date</option>
+                    <option value="organizer">Organizer</option>
+                </select>
+            </div>
+
             {events.length > 0 ? (
                 <div className="card-list">
                     {events.map((item) => (
