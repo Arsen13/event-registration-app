@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL: "http://localhost:5000/event",
+    baseURL: "https://event-registration-app-hxl3.onrender.com/event",
     timeout: 10000,
     headers: {
         "Content-Type": "application/json",
